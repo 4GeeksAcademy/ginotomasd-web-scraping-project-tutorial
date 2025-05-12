@@ -11,7 +11,7 @@ resource_url = "https://en.wikipedia.org/wiki/List_of_Spotify_streaming_records"
 
 response = requests.get(resource_url, time.sleep(10))
 if response:
-    soup = BeautifulSoup(response.text, 'html')
+    soup = BeautifulSoup(response.text, 'lxml')
     soup
 
 # Get the data from Wikipedia using pandas.
@@ -98,4 +98,3 @@ sns.scatterplot(data=df, x='Year', y='Streams')
 plt.title('Streams by Release Year')
 plt.show()
 
-display(df)
